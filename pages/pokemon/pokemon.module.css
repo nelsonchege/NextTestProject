@@ -1,0 +1,14 @@
+.container {
+  overflow: hidden;
+  height: 90vh;
+  width: 90vw;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  height: 250px;
+  width: 250px;
+}

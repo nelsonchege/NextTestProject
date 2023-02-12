@@ -1,4 +1,5 @@
 import Head from "next/head";
+import styles from "./pokemon.module.css";
 
 export async function getStaticPaths() {
   let paths = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
@@ -35,9 +36,12 @@ function Pokemon({ Pokemon }) {
           content="initial-scale=1.0 , width=device-width"
         />
       </Head>
-      <div>
-        Welcome {Pokemon?.name}
-        <img src={Pokemon?.sprites.front_default} />
+      <div className={styles.container}>
+        <div>Welcome {Pokemon?.name}</div>
+        <div>
+          {" "}
+          <img src={Pokemon?.sprites.front_default} className={styles.img} />
+        </div>
       </div>
     </>
   );
