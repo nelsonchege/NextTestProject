@@ -1,6 +1,13 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 function Home() {
+  const router = useRouter();
+
+  const HandleClick = (e) => {
+    e.preventDefault();
+    router.push("/blog");
+  };
   return (
     <>
       <Head>
@@ -11,6 +18,7 @@ function Home() {
         />
       </Head>
       <div>hello world</div>
+      <button onClick={HandleClick}>Go to blogs page</button>
     </>
   );
 }
