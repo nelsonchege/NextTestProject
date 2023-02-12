@@ -1,9 +1,20 @@
+import Head from "next/head";
+
 function Pokeamon({ Pokeamon }) {
   return (
-    <div>
-      Welcome {Pokeamon?.name}
-      <img src={Pokeamon?.sprites.front_default} />
-    </div>
+    <>
+      <Head>
+        <title>{Pokeamon?.name}</title>
+        <meta
+          name="veiwport"
+          content="initial-scale=1.0 , width=device-width"
+        />
+      </Head>
+      <div>
+        Welcome {Pokeamon?.name}
+        <img src={Pokeamon?.sprites.front_default} />
+      </div>
+    </>
   );
 }
 
