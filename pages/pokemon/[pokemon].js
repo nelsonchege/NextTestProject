@@ -4,10 +4,8 @@ export async function getStaticPaths() {
   let paths = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
     .then((res) => res.json())
     .then((Pokemons) => {
-      console.log(Pokemons);
       return Pokemons.results.map((pokemon) => `/pokemon/${pokemon.name}`);
     });
-
   return {
     paths,
     fallback: false,
@@ -15,6 +13,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  // the params,pokemon is the name of the variable beween [] in the file name
   const Pokemon = await fetch(
     `https://pokeapi.co/api/v2/pokemon/${params.pokemon}`
   ).then((res) => res.json());
